@@ -1,5 +1,8 @@
 import express from 'express';
-import ffmpeg from 'fluent-ffmpeg';
+
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 const app = express();
 app.use(express.json());
